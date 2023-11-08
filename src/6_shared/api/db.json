@@ -1,0 +1,246 @@
+{
+  "catalog": [
+    {
+      "id": 15,
+      "info": {
+        "title": "Desk Lyon",
+        "text": "A classic rectangular desk does not take up much space and is suitable for a small room or office. It is equipped with two spacious drawers, above which there is an open niche for storing paper and other accessories. The main advantage of the product is a large work surface where it is convenient to lay out papers, place a laptop or monitor and work in comfort. The Lyon table is made from high-quality laminated chipboard."
+      },
+      "imgMain": "https://hoff.ru/upload/hoff_resize/hoff-images/123/083/3/f8c16f23fb9bd35468b29d10e826945f.jpg/666x444_85.webp",
+      "price": 5999,
+      "category": "table",
+      "color": "brown"
+    },
+    {
+      "id": 20,
+      "info": {
+        "title": "SIMONA THOMASINA GREY office chair",
+        "text": "The upholstery, pleasant to the touch, retains its original appearance for a long time."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/968/96838eef8f4ee614937fb97a5059a857.jpg",
+      "price": 14999,
+      "category": "armchair",
+      "color": "black"
+    },
+    {
+      "id": 1,
+      "info": {
+        "title": "Sofa Ingvar",
+        "text": "This model is only available in those upholstery options that are presented in our range."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/73b/73bf4acaffbece2a3a5e84ec1eeff049.jpg",
+      "price": 27999,
+      "category": "sofa",
+      "color": "black"
+    },
+    {
+      "id": 19,
+      "info": {
+        "title": "Office chair Lublin",
+        "text": "The elegant and compact Lublin work chair on a metal crosspiece will be a good solution for a home office or a schoolboy's corner. The soft seat is made of velour and artificial leather — beautiful and practical materials that are resistant to abrasion and damage. The model does not have armrests, so it is suitable for any workplace. The maximum load on the structure is 120 kg. The back on the sides is equipped with wings that support the upper part of the body in an optimal position. Thanks to the swing mechanism and height adjustment, the chair is easy to adapt to your individual characteristics and needs."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/0dc/0dc198320b1dc798cd493ef2d2dc51aa.jpg",
+      "price": 12999,
+      "category": "armchair",
+      "color": "gray"
+    },
+    {
+      "id": 2,
+      "info": {
+        "title": "Sofa-bed Rain",
+        "text": "The anatomical material does not bend and easily restores its shape."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/e3f/e3fa54481797d7b25759035fa4efa350.jpg",
+      "price": 17999,
+      "category": "sofa",
+      "color": "beige"
+    },
+    {
+      "id": 3,
+      "info": {
+        "title": "Sofa office Bit",
+        "text": "The anatomical material does not bend and easily restores its shape. PPU (polyurethane foam) is an ultra-light plastic material made from synthetic polymers."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/44e/44e580901a0d305133f77bdc8734be0d.jpg",
+      "price": 17999,
+      "category": "sofa",
+      "color": "white"
+    },
+    {
+      "id": 18,
+      "info": {
+        "title": "Office chair Lublin",
+        "text": "The elegant and compact Lublin work chair on a metal crosspiece will be a good solution for a home office or a schoolboy's corner. The soft seat is made of velour and artificial leather — beautiful and practical materials that are resistant to abrasion and damage. The model does not have armrests, so it is suitable for any workplace. The maximum load on the structure is 120 kg. The back on the sides is equipped with wings that support the upper part of the body in an optimal position. Thanks to the swing mechanism and height adjustment, the chair is easy to adapt to your individual characteristics and needs."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/49c/52ssmgy3g1yotb1yd45vws6ahedb9kek.jpg",
+      "price": 12999,
+      "category": "armchair",
+      "color": "brown"
+    },
+    {
+      "id": 11,
+      "info": {
+        "title": "Gaming computer desk VMMGAME",
+        "text": "The VMMGAME SPACE gaming computer desk is a comfortable space for work and entertainment. The table has two holders on which you can conveniently hang headphones or a backpack. Height-adjustable legs allow you to compensate for uneven floors. The front and back of the tabletop have a cutout. The cutout at the front allows you to sit comfortably, moving as close to the table as possible, while at the back you can remove wires from the monitor and computer peripherals. Holes in the tabletop, closed with decorative sleeves, allow you to remove wires or install additional fittings."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/064/064f0737f2c5562907b2099f9310bd42.jpg",
+      "price": 13999,
+      "category": "table",
+      "color": "black"
+    },
+    {
+      "id": 4,
+      "info": {
+        "title": "Corner sofa-bed Mansberg",
+        "text": "Durable mechanism designed for daily use."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/a2d/a2da114cfda4adcea95709310728fbbc.jpg",
+      "price": 25999,
+      "category": "sofa",
+      "color": "gray"
+    },
+    {
+      "id": 18,
+      "info": {
+        "title": "Office chair Lisbon",
+        "text": "Lisbon office chair made of velour (Confetti) material, metal in the color green (deep forest), chrome."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/954/9541ece416141784cb1075f3cdb77781.jpg",
+      "price": 10999,
+      "category": "armchair",
+      "color": "green"
+    },
+    {
+      "id": 5,
+      "info": {
+        "title": "Corner sofa-bed Toronto",
+        "text": "Durable mechanism designed for daily use."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/0f1/0f15a0b6e0e14a00f44c2e8572572131.jpg",
+      "price": 14999,
+      "category": "sofa",
+      "color": "blue"
+    },
+    {
+      "id": 17,
+      "info": {
+        "title": "Sabina Chair",
+        "text": "The chairs are beautiful and modern, but I had to make an exchange of two of the four purchased due to poor-quality metal coloring and the absence of a footrest on one chair. The second time they brought the same with a marriage in coloring, but decided to close their eyes to this, the benefit is not in a very prominent place of the marriage of coloring."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/430/vllln5l5383wc4lh5r8jrrqtjzbbllss.jpg",
+      "price": 3999,
+      "category": "chair",
+      "color": "gray"
+    },
+    {
+      "id": 12,
+      "info": {
+        "title": "Desk Renzo-2",
+        "text": "Desk Renzo-2 made of laminated chipboard in the color “concrete, white”."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/081/081bb2a088a5aa6debbe1327bb921528.jpg",
+      "price": 7999,
+      "category": "table",
+      "color": "white"
+    },
+    {
+      "id": 13,
+      "info": {
+        "title": "Tandem desk",
+        "text": "The Tandem desk is made of laminated chipboard, which is characterized by high wear resistance and meets all safety standards. The table has six drawers: four small drawers are located in the cabinet, under each tabletop there is a wide drawer."
+      },
+      "imgMain": "https://hoff.ru/upload/hoff_resize/hoff-images/985/240/55c5bc61af9e7edb729099973ff811b4.jpg/666x444_85.webp",
+      "price": 9999,
+      "category": "table",
+      "color": "white"
+    },
+    {
+      "id": 6,
+      "info": {
+        "title": "Morty's wardrobe",
+        "text": "Morty's wardrobe will help you organize your belongings wisely and decorate the interior of the nursery. The model is made in the Scandinavian style, using strict simple shapes and discreet natural shades. High legs give the furniture a special charm and help maintain perfect cleanliness in the room. Debris and dust will not accumulate under the bottom; the floor underneath can be conveniently cleaned with a mop and vacuum cleaner."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/ec6/ec6f6efa299a83382dd3edc0830ae290.jpg",
+      "price": 15299,
+      "category": "closet",
+      "color": "white"
+    },
+    {
+      "id": 7,
+      "info": {
+        "title": "Oscar wardrobe system",
+        "text": "Storing things is an important component of the functionality of an apartment. Arranging a special dressing area allows you to relieve the living space from heavy cabinets and chests of drawers. Easy access to things, clear structuring of clothes and shoes by type and seasonality contribute to a more rational organization of life and saving time."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/d06/d06ee1b78289d67377338d35b7ac6f19.jpg",
+      "price": 46219,
+      "category": "closet",
+      "color": "white"
+    },
+    {
+      "id": 8,
+      "info": {
+        "title": "Children's wardrobe Oscar",
+        "text": "The facades do not have drilling for a certain size and type of handles. You can choose different handle options for them.\nAdditionally, you can purchase high legs: different leg options to choose from."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/965/9657c0b515fd7f164fa71bc469109299.jpg",
+      "price": 11112,
+      "category": "closet",
+      "color": "green"
+    },
+    {
+      "id": 17,
+      "info": {
+        "title": "Hyde Chair",
+        "text": "Great chair. Lightweight, comfortable. The mesh structure allows air to pass to the back and pelvis if you sit for a long time. Her drawing is multidirectional, it looks interesting. The design of the legs intersects well with the design of the Talas kitchen table.I collected on the thread retainer (plumbing), but this is not necessary. I just decided to add strength to the joints :)"
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/242/vsxedode3lqje4516ropomhyxgo1scgu.jpg",
+      "price": 1799,
+      "category": "chair",
+      "color": "white"
+    },
+    {
+      "id": 9,
+      "info": {
+        "title": "Wardrobe 2-door Slide",
+        "text": "The Slide collection is suitable for those who are looking for a spacious wardrobe without frills. The affordable price is achieved thanks to the standard parameters of the cabinet: 1 filling option, 6 body colors: Snow White, Wenge, Light Concrete, Sonoma, Light Shimo Ash, Light Anchor Ash."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/afb/afba8e70ee52ed4eb8c5fc1e024d947a.jpg",
+      "price": 20397,
+      "category": "closet",
+      "color": "brown"
+    },
+    {
+      "id": 14,
+      "info": {
+        "title": "Desk Lyon",
+        "text": "A classic rectangular desk does not take up much space and is suitable for a small room or office. It is equipped with two spacious drawers, above which there is an open niche for storing paper and other accessories. The main advantage of the product is a large work surface where it is convenient to lay out papers, place a laptop or monitor and work in comfort. The Lyon table is made from high-quality laminated chipboard."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/c78/c78885422cacad4836035cf5fd270d78.jpg",
+      "price": 5999,
+      "category": "table",
+      "color": "white"
+    },
+    {
+      "id": 10,
+      "info": {
+        "title": "Wardrobe 2-door Slide",
+        "text": "The Slide collection is suitable for those who are looking for a spacious wardrobe without frills. The affordable price is achieved thanks to the standard parameters of the cabinet: 1 filling option, 7 body colors: Snow White, Wenge, Milk Oak, Sonoma, Shimo Light Ash, Dark Shimo Ash, Light Concrete."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/383/383af216029c88f99fc18d0120216ebe.jpg",
+      "price": 23697,
+      "category": "closet",
+      "color": "gray"
+    },
+    {
+      "id": 16,
+      "info": {
+        "title": "Ontario Chair",
+        "text": "Bought a chair very disappointed with the quality. Bought as a gift, were dissatisfied. In the store there was a chair with a discount due to scuffs and scratches on the legs, and we took a new one from the warehouse and at full cost, and as a result we got a chair with legs with scuffs and places of paint. Photo attached."
+      },
+      "imgMain": "https://hoff.ru/upload/iblock/79a/t2gpt3olcr093k4w65101n8aq9x0ly9e.jpg",
+      "price": 3599,
+      "category": "chair",
+      "color": "silver"
+    }
+  ]
+}

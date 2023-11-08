@@ -1,0 +1,19 @@
+.SortCatalog {
+  width: calc(75% - 1em);
+  padding: 1em 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  order: 0;
+  @media (max-width: 1320px){
+    width: calc(60% - 1em);
+  }
+  @media(max-width: 720px){
+    width: 100%;
+  }
+
+  span{
+    color: var(--color-gray);
+  }
+}

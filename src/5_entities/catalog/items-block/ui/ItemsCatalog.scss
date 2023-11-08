@@ -1,0 +1,21 @@
+.ItemsCatalog{
+  width: calc(75% - 1em);
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.8em;
+  transition: ease-in-out .3s;
+  order: 0;
+  @media (max-width: 1320px){
+    width: calc(60% - 1em);
+  }
+  @media (max-width: 720px){
+    width: 100%;
+    order: 3;
+  }
+
+  .items-container{
+    display: flex;
+    flex-direction: column;
+  }
+}

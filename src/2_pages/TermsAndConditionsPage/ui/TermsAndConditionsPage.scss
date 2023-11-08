@@ -1,0 +1,25 @@
+.TermsAndConditionsPage{
+  .terms-container{
+    margin-top: 100px;
+
+    h1{
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--color-dark);
+      margin-bottom: 0.5em;
+      @media (max-width: 720px){
+        font-size: 28px;
+      }
+    }
+    p{
+      font-size: 24px;
+      color: var(--color-dark);
+      font-weight: 300;
+      margin-bottom: 2em;
+      line-height: normal;
+      @media (max-width: 720px){
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.ProductWeek{
+  width: calc(33% - 1em);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  transition: ease-in-out .3s;
+
+  &:hover{
+    opacity: 70%;
+  }
+  img{
+    width: 100%;
+    height: 40%;
+  }
+
+  .card-item-info{
+    text-align: center;
+    h4{
+      font-size: 24px;
+      color: var(--color-dark);
+      line-height: normal;
+    }
+    span{
+      font-size: 24px;
+      color: var(--color-gray);
+      line-height: normal;
+    }
+  }
+}
+
+@media (max-width: 720px){
+  .ProductWeek{
+    width: calc(50% - 0.5em);
+
+    .card-item-info {
+      h4 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      span {
+        font-size: 18px;
+        margin-top: -30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.CardsProductCategory{
+  margin-top: 160px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10em;
+}
+@media (max-width: 1120px){
+  .CardsProductCategory{
+    gap: 5em;
+  }
+}
+@media (max-width: 720px){
+  .CardsProductCategory{
+    margin-top: 60px;
+    gap: 2.5em;
+  }
+}

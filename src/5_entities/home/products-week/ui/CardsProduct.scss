@@ -1,0 +1,12 @@
+.CardsProduct.cards-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 720px){
+  .CardsProduct.cards-container{
+    gap: 1em;
+  }
+}

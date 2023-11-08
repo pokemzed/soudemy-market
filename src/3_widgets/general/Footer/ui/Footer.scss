@@ -1,0 +1,118 @@
+.Footer {
+  width: 100%;
+  padding: 3.5em 0;
+  background: var(--color-dark);
+  margin-top: 100px;
+
+  display: flex;
+  align-items: center;
+
+  .main-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 3em;
+
+    .links-container {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 7.5em;
+
+      .item-links {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: .5em;
+        color: var(--color-light);
+
+        label {
+          margin-bottom: -2.5px;
+        }
+
+        a {
+          color: var(--color-gray);
+          text-decoration: none;
+          transition: ease-in-out .3s;
+
+          &:hover {
+            color: var(--color-light);
+          }
+        }
+      }
+
+      .links-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+
+        a {
+          padding: .5em 2em;
+          background: #454545;
+          color: #fff;
+          border-radius: 50px;
+          transition: ease-in-out .3s;
+
+          display: flex;
+          align-items: center;
+          gap: .5em;
+
+          &:hover {
+            background: #565656;
+          }
+        }
+      }
+    }
+  }
+
+  .about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    p {
+      width: 35%;
+      text-align: right;
+      font-size: 14px;
+      color: var(--color-gray);
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .Footer {
+    .main-block {
+      .links-container {
+        gap: 3em;
+      }
+
+      .links-social {
+        flex-direction: column;
+      }
+    }
+
+    .about-container {
+      p {
+        width: 55%;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .Footer {
+    .about-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .5em;
+
+      p {
+        text-align: left;
+        width: 90%;
+      }
+    }
+  }
+}

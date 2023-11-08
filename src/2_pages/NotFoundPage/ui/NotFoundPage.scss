@@ -1,0 +1,33 @@
+.NotFoundPage {
+  .container-page {
+    margin-top: 250px;
+    margin-bottom: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+
+    img{
+      width: 10%;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        width: 100%;
+        font-size: 48px;
+        font-weight: 500;
+        color: var(--color-dark);
+        text-align: center;
+      }
+      span{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
