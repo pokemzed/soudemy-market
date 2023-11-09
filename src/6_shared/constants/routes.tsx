@@ -13,48 +13,70 @@ import TermsAndConditionsPage from "../../2_pages/TermsAndConditionsPage";
 
 interface IRoute {
     path: ELinks,
-    element: ReactNode
+    element: ReactNode,
+    title: string,
+    metaName: string
 }
 
 export const ROUTES_LIST: IRoute[] = [
     {
         path: ELinks.LINK_HOMEPAGE,
-        element: <HomePage/>
+        element: <HomePage/>,
+        title: 'Soudemy – a world where dreams come true',
+        metaName: 'Online furniture store and more'
     },
     {
         path: ELinks.LINK_ABOUTPAGE,
-        element: <AboutPage/>
+        element: <AboutPage/>,
+        title: 'Soudemy – about us',
+        metaName: 'Your Furniture Hypermarket for Home Perfection'
     },
     {
         path: ELinks.LINK_CATALOGPAGE,
-        element: <CatalogPage/>
+        element: <CatalogPage/>,
+        title: 'Catalog',
+        metaName: 'Large selection of products in the soudemy online store'
     },
     {
         path: ELinks.LINK_CARTPAGE,
-        element: <CartPage/>
+        element: <CartPage/>,
+        title: 'Cart',
+        metaName: 'Your cart is the closest way to receiving'
     },
     {
         path: ELinks.LINK_BLOGPAGE,
-        element: <BlogPage/>
+        element: <BlogPage/>,
+        title: 'Blog',
+        metaName: 'Lots of interesting news and life hacks from soudemy'
     },
     {
         path: ELinks.LINK_FAVORITEPAGE,
-        element: <FavoritePage/>
+        element: <FavoritePage/>,
+        title: 'Favorite',
+        metaName: 'Add your favorite products to your favorites'
     },
     {
         path: ELinks.LINK_ANOTHER,
-        element: <NotFoundPage/>
+        element: <NotFoundPage/>,
+        title: 'Page not found',
+        metaName: 'Page not found'
     },
     {
         path: ELinks.LINK_ITEMCATALOGPAGE,
-        element: <CatalogItemPage/>
+        element: <CatalogItemPage/>,
+        title: '',
+        metaName: ''
     },
     {
         path: ELinks.LINK_PRIVACYPAGE,
-        element: <PrivacyPolicyPage/>
+        element: <PrivacyPolicyPage/>,
+        title: 'Page Privacy Policy',
+        metaName: 'POLICY regarding the processing and security of personal data at Home Interior LLC'
     },
     {
         path: ELinks.LINK_TERMSPAGE,
-        element: <TermsAndConditionsPage/>
+        element: <TermsAndConditionsPage/>,
+        title: 'Page Terms and Conditions',
+        metaName: 'Standard business terms and more'
     }
 ]

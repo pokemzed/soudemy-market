@@ -1,10 +1,16 @@
 import React from "react";
 import Layout from "../../../3_widgets/general/Layout";
 import {Container} from "react-bootstrap";
+import {Helmet} from "react-helmet";
 
 export const PrivacyPolicyPage: React.FC = () => {
     return (
         <Layout className={"PrivacyPolicyPage"}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="POLICY regarding the processing and security of personal data at Home Interior LLC"/>
+                <title>Page Privacy Policy</title>
+            </Helmet>
             <Container className={"privacy-container"}>
                 <h1>POLICY regarding the processing and security of personal data at Home Interior LLC</h1>
                 <div className={'info-block'}>

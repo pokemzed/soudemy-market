@@ -1,10 +1,16 @@
 import React from "react";
 import Layout from "../../../3_widgets/general/Layout";
 import {Container} from "react-bootstrap";
+import {Helmet} from "react-helmet";
 
 export const TermsAndConditionsPage: React.FC = () => {
     return (
         <Layout className={"TermsAndConditionsPage"}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Standard business terms and more"/>
+                <title>Page Terms and Conditions</title>
+            </Helmet>
             <Container className={"terms-container"}>
                 <h1>
                     Terms and Conditions

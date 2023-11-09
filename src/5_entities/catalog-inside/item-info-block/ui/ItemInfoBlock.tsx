@@ -6,6 +6,7 @@ import {addItemFavorite, deleteItemFavorite} from "../../../../6_shared/store/sl
 import {ICartItem, IItem} from "../../../../6_shared/types/catalog/items.ts";
 import ItemCatalogInside from "../../../../4_features/catalog-inside/ItemCatalog";
 import {addItemCart, removeItemCart} from "../../../../6_shared/store/slices/cartSlice.ts";
+import {Helmet} from "react-helmet";
 
 export const ItemInfoBlock: React.FC = () => {
     const dispatch = useDispatch()
@@ -46,8 +47,15 @@ export const ItemInfoBlock: React.FC = () => {
     }
 
     return itemInfo && (
-        <ItemCatalogInside itemInfo={itemInfo[0]} handleFavorite={handleFavorite} checkFavorite={inFavorite}
-                     handleRemoveItemCart={handleRemoveItemCart} handleAddItemCart={handleAddItemCart}
-                     itemInCart={itemInCart}/>
+        <>
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <meta name="description" content="Standard business terms and more"/>
+                <title>{itemInfo[0].info.title}</title>
+            </Helmet>
+            <ItemCatalogInside itemInfo={itemInfo[0]} handleFavorite={handleFavorite} checkFavorite={inFavorite}
+                               handleRemoveItemCart={handleRemoveItemCart} handleAddItemCart={handleAddItemCart}
+                               itemInCart={itemInCart}/>
+        </>
     )
 }
