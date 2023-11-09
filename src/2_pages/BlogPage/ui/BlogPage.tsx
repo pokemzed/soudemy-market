@@ -9,7 +9,7 @@ export const BlogPage: React.FC = () => {
                 <meta name="description" content="Lots of interesting news and life hacks from soudemy"/>
                 <title>Blog</title>
             </Helmet>
-            It's blogpage
+            Blog
         </div>
     )
 }

@@ -4,7 +4,7 @@ import {IInitialGoods} from "../../types/catalog/items.ts";
 const initialState: IInitialGoods = {
     category: '',
     search: '',
-    limitItems: 10,
+    limitItems: 6,
 }
 
 export const initialGoods = createSlice({
@@ -12,12 +12,14 @@ export const initialGoods = createSlice({
     initialState,
     reducers: {
         addItems: (state) => {
-            state.limitItems = state.limitItems + 10
+            state.limitItems = state.limitItems + 3
         },
         changeCategory: (state, action) => {
+            state.limitItems = 6
             state.category = action.payload
         },
         changeSearch: (state, action) => {
+            state.limitItems = 6
             state.search = action.payload
         },
     }
