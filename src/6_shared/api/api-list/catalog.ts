@@ -1,6 +1,7 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {API_CATALOG_URL, API_URL} from "../../constants/api.ts";
+import {API_BLOG_POST_URL, API_CATALOG_URL, API_URL} from "../../constants/api.ts";
 import {IItem} from "../../types/catalog/items.ts";
+import {IBlogPost} from "../../types/blog.ts";
 
 export const catalog = createApi({
     reducerPath: 'catalog',
@@ -25,6 +26,9 @@ export const catalog = createApi({
         }),
         getAllCategory: build.query<IItem[], string | undefined>({
             query: (itemCategory) => `${API_CATALOG_URL}?category=${itemCategory}`
+        }),
+        getAllBlogPosts: build.query<IBlogPost[], null>({
+            query: () => API_BLOG_POST_URL
         })
     })
 })
