@@ -8,7 +8,7 @@
   background: var(--color-light);
 
   transition: ease-in-out .5s;
-  transform: translateY(-110%);
+  transform: translateY(-120%);
 
   .header-menu_container{
     width: 100%;
@@ -35,6 +35,18 @@
     flex-direction: column;
     align-items: center;
     gap: 3em;
+
+    .profile-link{
+      width: 100%;
+      padding: 1em 5em;
+      color: var(--color-dark);
+      border: 1px solid #303030;
+      transition: background, color .3s;
+      &:active{
+        background: var(--color-dark);
+        color: var(--color-light);
+      }
+    }
 
     a{
       text-decoration: none;

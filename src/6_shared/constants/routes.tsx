@@ -10,6 +10,9 @@ import NotFoundPage from "../../2_pages/NotFoundPage";
 import CatalogItemPage from "../../2_pages/CatalogItemPage";
 import PrivacyPolicyPage from "../../2_pages/PrivacyPolicyPage";
 import TermsAndConditionsPage from "../../2_pages/TermsAndConditionsPage";
+import ProfilePage from "../../2_pages/ProfilePage";
+import SignInPage from "../../2_pages/SignInPage";
+import SignUpPage from "../../2_pages/SignUpPage";
 
 interface IRoute {
     path: ELinks,
@@ -54,6 +57,24 @@ export const ROUTES_LIST: IRoute[] = [
         element: <FavoritePage/>,
         title: 'Favorite',
         metaName: 'Add your favorite products to your favorites'
+    },
+    {
+        path: ELinks.LINK_PROFILEPAGE,
+        element: <ProfilePage/>,
+        title: 'Profile',
+        metaName: 'Your profile - your capabilities'
+    },
+    {
+        path: ELinks.LINK_SIGNIN,
+        element: <SignInPage/>,
+        title: 'SignIn',
+        metaName: 'SignIn page - login in your account'
+    },
+    {
+        path: ELinks.LINK_SIGNUP,
+        element: <SignUpPage/>,
+        title: 'SignUp',
+        metaName: 'SignUp page - register your account'
     },
     {
         path: ELinks.LINK_ANOTHER,

@@ -53,9 +53,14 @@ export const ItemInfoBlock: React.FC = () => {
                 <meta name="description" content="Standard business terms and more"/>
                 <title>{itemInfo[0].info.title}</title>
             </Helmet>
-            <ItemCatalogInside itemInfo={itemInfo[0]} handleFavorite={handleFavorite} checkFavorite={inFavorite}
-                               handleRemoveItemCart={handleRemoveItemCart} handleAddItemCart={handleAddItemCart}
-                               itemInCart={itemInCart}/>
+            <ItemCatalogInside
+                itemInfo={itemInfo[0]}
+                handleFavorite={handleFavorite}
+                checkFavorite={inFavorite}
+                handleRemoveItemCart={handleRemoveItemCart}
+                handleAddItemCart={handleAddItemCart}
+                itemInCart={itemInCart}
+            />
         </>
     )
 }

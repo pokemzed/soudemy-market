@@ -3,10 +3,13 @@ export enum ELinks{
     LINK_ABOUTPAGE = '/about',
     LINK_BLOGPAGE = '/blog',
     LINK_FAVORITEPAGE = '/favorite',
+    LINK_PROFILEPAGE = '/profile',
     LINK_CARTPAGE = '/cart',
     LINK_CATALOGPAGE = '/catalog',
     LINK_ITEMCATALOGPAGE = '/catalog/:id',
-    LINK_ANOTHER = '*',
+    LINK_SIGNIN = '/auth/login',
+    LINK_SIGNUP = '/auth/reg',
     LINK_PRIVACYPAGE = '/privacy-police',
-    LINK_TERMSPAGE = '/terms-and-conditions'
+    LINK_TERMSPAGE = '/terms-and-conditions',
+    LINK_ANOTHER = '*',
 }

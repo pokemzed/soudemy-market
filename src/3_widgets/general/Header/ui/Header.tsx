@@ -8,7 +8,7 @@ interface IHeaderProps {
     headerLight?: boolean
 }
 
-export const Header: React.FC<IHeaderProps> = ({headerLight}) => {
+export const Header: React.FC<IHeaderProps> = ({headerLight = false}) => {
     const [showMenu, setShowMenu] = React.useState<boolean>(false)
     const handleShowMenu = () => {
         setShowMenu(!showMenu)
@@ -42,12 +42,22 @@ export const Header: React.FC<IHeaderProps> = ({headerLight}) => {
                             />
                         </Link>
                         <Link to={ELinks.LINK_CARTPAGE}>
-                            <img src={`${headerLight ? '/icons/icon-cart-light.svg' : '/icons/icon-cart-dark.svg'}`}
-                                 alt="icon-cart"/>
+                            <img
+                                src={`${headerLight ? '/icons/icon-cart-light.svg' : '/icons/icon-cart-dark.svg'}`}
+                                alt="icon-cart"
+                            />
+                        </Link>
+                        <Link to={ELinks.LINK_PROFILEPAGE} className={"header-profile"}>
+                            <img
+                                src={`${headerLight ? '/icons/icon-profile-light.svg' : '/icons/icon-profile-dark.svg'}`}
+                                alt="icon-profile"
+                            />
                         </Link>
                         <a className={'header-menu'} onClick={handleShowMenu}>
-                            <img src={`${headerLight ? '/icons/icon-menu-light.svg' : '/icons/icon-menu-dark.svg'}`}
-                                 alt="icon-menu"/>
+                            <img
+                                src={`${headerLight ? '/icons/icon-menu-light.svg' : '/icons/icon-menu-dark.svg'}`}
+                                alt="icon-menu"
+                            />
                         </a>
                     </div>
                 </Container>
