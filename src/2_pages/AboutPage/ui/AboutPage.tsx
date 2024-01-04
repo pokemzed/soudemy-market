@@ -10,6 +10,7 @@ export const AboutPage: React.FC = () => {
                 <meta charSet="utf-8"/>
                 <meta name="description" content="Your Furniture Hypermarket for Home Perfection"/>
                 <title>Soudemy – about us</title>
+                <span>for test commit</span>
             </Helmet>
             <FirstInfoModule/>
         </Layout>
