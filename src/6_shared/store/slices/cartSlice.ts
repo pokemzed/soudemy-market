@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {IItem, ICartItem} from "../../types/catalog/items.ts";
+import {ICartItem} from "../../types/catalog/items.ts";
 
 const initialState: {cartItems: ICartItem[], total: number} = {
     cartItems: [],
@@ -10,24 +10,33 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addItemCart: (state, action: {payload: IItem | undefined, type: string}) => {
-            const itemInCart: ICartItem | undefined = state.cartItems.find((item: ICartItem) => item.id == action.payload?.id)
-            if(itemInCart && itemInCart.count >= 0){
+        addItemCart: (state, action: {payload: {id: number, price: number}, type: string}) => {
+            // Находим товар в корзине
+            const itemInCart: ICartItem | undefined = state.cartItems.find((item: ICartItem) => item.id === action.payload.id)
+            // Проверяем условия
+            if(itemInCart){
                 itemInCart.count += 1
-                state.total += action.payload!.price
-            } else {
-                state.cartItems.push({...action.payload!, count: 1})
-                state.total += action.payload!.price
+                state.total += action.payload.price
+                return
+            }
+            if(!itemInCart) {
+                state.cartItems = [{...action.payload, count: 1}, ...state.cartItems]
+                state.total += action.payload.price
+                return;
             }
         },
-        removeItemCart: (state, action: {payload: IItem | undefined, type: string}) => {
-            const itemInCart: ICartItem | undefined = state.cartItems.find((item: ICartItem) => item.id == action.payload?.id)
+        removeItemCart: (state, action: {payload: {id: number, price: number}, type: string}) => {
+            // Находим товар в корзине
+            const itemInCart: ICartItem | undefined = state.cartItems.find((item: ICartItem) => item.id === action.payload.id)
+            // Проверяем условия
             if(itemInCart && itemInCart.count > 1){
                 itemInCart.count -= 1
-                state.total -= action.payload!.price
-            } else {
-                state.cartItems = state.cartItems.filter((item: ICartItem) => item.id !== action.payload?.id)
-                state.total = state.total - action.payload!.price
+                state.total -= action.payload.price
+                return
+            }
+            if(itemInCart && itemInCart.count === 1){
+                state.cartItems = state.cartItems.filter(item => item.id !== action.payload.id)
+                state.total -= action.payload.price
             }
         },
         clearItemsCart: (state) => {

@@ -17,7 +17,7 @@ export const ItemsCatalog: React.FC = () => {
         <div className={'ItemsCatalog'}>
             <div className={"items"}>
                 {
-                    isLoading && [...Array(6)].map(() => <SkeletonItemCatalog/>)
+                    isLoading && [...Array(6)].map((_, index) => <SkeletonItemCatalog key={index}/>)
                 }
                 {
                     itemsCatalog?.map((item: IItem, index: number) => {

@@ -7,7 +7,7 @@ export const catalog = createApi({
     reducerPath: 'catalog',
     baseQuery: fetchBaseQuery({baseUrl: API_URL}),
     endpoints: (build) => ({
-        getAllCatalog: build.query<IItem[], any>({
+        getAllCatalog: build.query<IItem[], {limit: number; category: string; search: string}>({
             query: (body) => {
                 if(body.search && body.category){
                     return `${API_CATALOG_URL}?category=${body.category}&q=${body.search}&_limit=${body.limit}`
@@ -21,13 +21,13 @@ export const catalog = createApi({
                 return `${API_CATALOG_URL}?_limit=${body.limit}`
             }
         }),
-        getItemCatalog: build.query<IItem[], string | undefined>({
+        getItemCatalog: build.query<IItem[], string | number | undefined>({
             query: (itemId) => `${API_CATALOG_URL}?id=${itemId}`
         }),
         getAllCategory: build.query<IItem[], string | undefined>({
             query: (itemCategory) => `${API_CATALOG_URL}?category=${itemCategory}`
         }),
-        getAllBlogPosts: build.query<IBlogPost[], null>({
+        getAllBlogPosts: build.query<IBlogPost[], unknown>({
             query: () => API_BLOG_POST_URL
         })
     })

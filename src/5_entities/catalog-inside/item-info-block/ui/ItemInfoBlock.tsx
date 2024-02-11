@@ -1,33 +1,37 @@
 import React from "react";
 import {useParams} from "react-router-dom";
 import {useGetItemCatalogQuery} from "../../../../6_shared/api";
-import {useDispatch, useSelector} from "react-redux";
 import {addItemFavorite, deleteItemFavorite} from "../../../../6_shared/store/slices/favoriteGoods.ts";
 import {ICartItem, IItem} from "../../../../6_shared/types/catalog/items.ts";
 import ItemCatalogInside from "../../../../4_features/catalog-inside/ItemCatalog";
 import {addItemCart, removeItemCart} from "../../../../6_shared/store/slices/cartSlice.ts";
 import {Helmet} from "react-helmet";
+import {useAppDispatch, useAppSelector} from "../../../../6_shared/store";
 
 export const ItemInfoBlock: React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const {id: itemId} = useParams()
+    //получение товаров корзины
+    const {cartItems} = useAppSelector(state => state.cart)
     //проверка изранного
-    const favoriteItems = useSelector((state: any) => state.favorite.items)
+    const favoriteItems = useAppSelector(state => state.favorite.items)
     const inFavorite = Boolean(favoriteItems.find((item: IItem) => item.id == Number(itemId)))
     //данные товара
     const {data: itemInfo, isError: itemError} = useGetItemCatalogQuery(itemId)
 
+    if(!itemInfo){
+        return <h3>Загрузка</h3>
+    }
 
     //логика кнопки корзины
-    const {cartItems} = useSelector((state: any) => state.cart)
     const itemInCart = cartItems.find((item: ICartItem) => item.id === Number(itemId))
     //Добавление в корзину
     const handleAddItemCart = (): void => {
-        dispatch(addItemCart(itemInfo && itemInfo[0]))
+        dispatch(addItemCart({id: itemInfo[0].id, price: itemInfo[0].price}))
     }
     //Удаление из корзины
     const handleRemoveItemCart = (): void => {
-        dispatch(removeItemCart(itemInfo && itemInfo[0]))
+        dispatch(removeItemCart({id: itemInfo[0].id, price: itemInfo[0].price}))
     }
 
 
