@@ -3,15 +3,15 @@ import {IItem} from "../../../../6_shared/types/catalog/items.ts";
 import {useNavigate} from "react-router-dom";
 import 'animate.css'
 import {useInView} from 'react-intersection-observer'
-import {useDispatch} from "react-redux";
 import {changeCategory} from "../../../../6_shared/store/slices/initialGoods.ts";
+import {useAppDispatch} from "../../../../6_shared/store";
 
 interface IPropItem {
     item: IItem,
 }
 
 export const CatalogItem: React.FC<IPropItem> = ({item}) => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const { ref, inView } = useInView({
         threshold: 0,
         triggerOnce: true

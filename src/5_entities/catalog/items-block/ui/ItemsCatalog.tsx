@@ -4,7 +4,7 @@ import CatalogItem from "../../../../4_features/catalog/CatalogItem";
 import {getInitialStateGoods} from "../../../../6_shared/hooks/getInitialStateGoods.ts";
 import {useGetAllCatalogQuery} from "../../../../6_shared/api";
 import {useDispatch} from "react-redux";
-import {addItems} from "../../../../6_shared/store/slices/initialGoods.ts";
+import {showMoreItems} from "../../../../6_shared/store/slices/initialGoods.ts";
 import SkeletonItemCatalog from "../../../../4_features/skeleton/SkeletonItemCatalog.tsx";
 
 
@@ -29,7 +29,7 @@ export const ItemsCatalog: React.FC = () => {
             </div>
             {
                 itemsCatalog && !(initialStateGoods.limit > itemsCatalog.length) && (
-                    <button onClick={() => dispatch(addItems())}>
+                    <button onClick={() => dispatch(showMoreItems())}>
                         Show +3 goods
                     </button>
                 )

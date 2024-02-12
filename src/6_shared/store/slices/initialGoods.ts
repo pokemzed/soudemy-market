@@ -11,7 +11,7 @@ export const initialGoods = createSlice({
     name: 'initialGoods',
     initialState,
     reducers: {
-        addItems: (state) => {
+        showMoreItems: (state) => {
             state.limitItems = state.limitItems + 3
         },
         changeCategory: (state, action) => {
@@ -25,5 +25,5 @@ export const initialGoods = createSlice({
     }
 })
 
-export const {addItems, changeSearch, changeCategory} = initialGoods.actions
+export const {showMoreItems, changeSearch, changeCategory} = initialGoods.actions
 export default initialGoods.reducer
