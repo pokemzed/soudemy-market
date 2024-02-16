@@ -1,0 +1,29 @@
+.AddToFavouriteButton{
+  cursor: pointer;
+  transition: ease-in-out .3s;
+  &:hover{
+    opacity: 50%;
+  }
+  @media (max-width: 720px){
+    padding: 1.15em;
+    border: 1px solid var(--color-dark);
+  }
+}
+.active-favorite{
+  svg{
+    fill: red;
+    path{
+      stroke: red;
+    }
+  }
+  @media (max-width: 720px){
+    background: red;
+    border: none;
+    svg{
+      fill: #fff;
+      path{
+        stroke: red;
+      }
+    }
+  }
+}

@@ -11,23 +11,21 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addItemCart: (state, action: {payload: {id: number, price: number}, type: string}) => {
-            // Находим товар в корзине
-            const itemInCart: ICartItem | undefined = state.cartItems.find((item: ICartItem) => item.id === action.payload.id)
-            // Проверяем условия
+            // Находим товар
+            const itemInCart = state.cartItems.find(item => item.id === action.payload.id)
             if(itemInCart){
                 itemInCart.count += 1
-                state.total += action.payload.price
+                state.total += itemInCart.price
                 return
             }
-            if(!itemInCart) {
+            if(!itemInCart){
                 state.cartItems = [{...action.payload, count: 1}, ...state.cartItems]
                 state.total += action.payload.price
-                return;
             }
         },
         removeItemCart: (state, action: {payload: {id: number, price: number}, type: string}) => {
-            // Находим товар в корзине
-            const itemInCart: ICartItem | undefined = state.cartItems.find((item: ICartItem) => item.id === action.payload.id)
+            // Находим товар
+            const itemInCart = state.cartItems.find(item => item.id === action.payload.id)
             // Проверяем условия
             if(itemInCart && itemInCart.count > 1){
                 itemInCart.count -= 1

@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../../3_widgets/general/Layout";
-import ItemsCart from "../../../5_entities/cart/items-cart-block";
 import {Helmet} from "react-helmet";
+import CartItems from "../../../3_widgets/cart/CartItems";
 
 export const CartPage: React.FC = () => {
     return (
@@ -11,7 +11,7 @@ export const CartPage: React.FC = () => {
                 <meta name="description" content="Your cart is the closest way to receiving"/>
                 <title>Cart</title>
             </Helmet>
-            <ItemsCart/>
+            <CartItems/>
         </Layout>
     )
 }

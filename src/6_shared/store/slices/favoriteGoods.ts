@@ -1,7 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {IItem} from "../../types/catalog/items.ts";
 
-const initialState: {items: IItem[]} = {
+const initialState: {items: number[]} = {
     items: []
 }
 
@@ -9,19 +8,11 @@ export const favoriteGoods = createSlice({
     name: 'favorite-goods',
     initialState,
     reducers: {
-        addItemFavorite: (state, action) => {
-           let inFavorite = false
-           state.items.forEach(item => {
-               if(item.id == action.payload.id){
-                   inFavorite = true
-               }
-           })
-            if(!inFavorite){
-                state.items.push(action.payload)
-            }
+        addItemFavorite: (state, action: {payload: number}) => {
+            state.items.push(action.payload)
         },
-        deleteItemFavorite: (state, action) => {
-            state.items = state.items.filter((item: IItem) => item.id !== action.payload)
+        deleteItemFavorite: (state, action: {payload: number}) => {
+            state.items = state.items.filter((item: number) => item === action.payload)
         }
     }
 })

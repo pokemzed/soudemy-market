@@ -1,19 +1,19 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {deleteItemFavorite} from "../../../../6_shared/store/slices/favoriteGoods.ts";
-import {IItem} from "../../../../6_shared/types/catalog/items.ts";
 import FavoriteItem from "../../../../4_features/favorite/FavoriteItem";
 import {Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {ELinks} from "../../../../6_shared/types/links.ts";
+import {useAppSelector} from "../../../../6_shared/store";
 
 export const ItemsFavorite: React.FC = () => {
     const dispatch = useDispatch()
-    const handleDeleteItem = (item: IItem) => {
-        dispatch(deleteItemFavorite(item.id))
+    const handleDeleteItem = (itemId: number) => {
+        dispatch(deleteItemFavorite(itemId))
     }
 
-    const {items} = useSelector((state: any) => state.favorite)
+    const {items} = useAppSelector((state) => state.favorite)
 
     return (
         <div className={"ItemsFavorite"} style={{marginBottom: !items.length ? '420px' : '0'}}>
@@ -22,9 +22,9 @@ export const ItemsFavorite: React.FC = () => {
                 <div className={'items'}>
                     {
                         items.length > 0 ?
-                            items?.map((item: IItem) => {
+                            items?.map((item: number) => {
                                 return (
-                                    <FavoriteItem key={item.id} item={item} handleItem={handleDeleteItem} itemFavorite={true}/>
+                                    <FavoriteItem key={item} itemId={item} handleItem={handleDeleteItem}/>
                                 )
                             })
                             : <h5>Добавьте товары. <Link to={ELinks.LINK_CATALOGPAGE}>В каталог</Link></h5>

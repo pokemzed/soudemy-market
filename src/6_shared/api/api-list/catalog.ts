@@ -25,7 +25,12 @@ export const catalog = createApi({
             query: (itemId) => `${API_CATALOG_URL}?id=${itemId}`
         }),
         getAllCategory: build.query<IItem[], string | undefined>({
-            query: (itemCategory) => `${API_CATALOG_URL}?category=${itemCategory}`
+            query: (itemCategory) => {
+                if(itemCategory?.length){
+                    return `${API_CATALOG_URL}?category=${itemCategory}`
+                }
+                return `${API_CATALOG_URL}`
+            }
         }),
         getAllBlogPosts: build.query<IBlogPost[], unknown>({
             query: () => API_BLOG_POST_URL

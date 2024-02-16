@@ -2,7 +2,7 @@ import React from "react";
 import {Helmet} from "react-helmet";
 import Layout from "../../../3_widgets/general/Layout";
 import {useGetAllBlogPostsQuery} from "../../../6_shared/api";
-import BlogItem from "../../../4_features/blog/BlogItem";
+import BlogItem from "../../../5_entities/blog/BlogItem";
 
 export const BlogPage: React.FC = () => {
     const {data: blogPosts} = useGetAllBlogPostsQuery(null)

@@ -1,10 +1,10 @@
 import React from "react";
 import Layout from "../../../3_widgets/general/Layout";
 import {Container} from "react-bootstrap";
-import SortCatalog from "../../../5_entities/catalog/sort-catalog";
-import ItemsCatalog from "../../../5_entities/catalog/items-block";
-import ParamsCatalog from "../../../5_entities/catalog/params-catalog";
+import SortCatalog from "../../../4_features/catalog/sort-catalog";
+import ParamsCatalog from "../../../4_features/catalog/params-catalog";
 import {Helmet} from "react-helmet";
+import ItemsCatalog from "../../../3_widgets/catalog/ItemsCatalog";
 
 export const CatalogPage: React.FC = () => {
     return (

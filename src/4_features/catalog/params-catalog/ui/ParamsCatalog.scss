@@ -1,0 +1,93 @@
+.ParamsCatalog{
+  width: calc(25% - 1em);
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  order: 0;
+  @media (max-width: 1320px){
+    width: calc(40% - 1em);
+  }
+  @media (max-width: 720px){
+    width: 100%;
+    order: 2;
+    gap: 1.5em;
+  }
+
+  //input
+  input{
+    width: 100%;
+    padding: 0.75em 1em;
+    font-size: 18px;
+    color: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    outline: none;
+    &:focus{
+      border: 1px solid var(--color-dark);
+    }
+  }
+
+  //text
+  h2{
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  //list
+  ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    @media(max-width: 480px){
+      display: none;
+    }
+
+    li {
+      font-size: 20px;
+      background: #f3f3f3;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      color: var(--color-dark);
+      list-style-type: none;
+      cursor: pointer;
+      transition: ease-in .15s;
+      &:hover{
+        color: var(--color-gray);
+      }
+    }
+  }
+
+  //active item list
+  .active{
+    color: var(--color-light);
+    background: var(--color-dark);
+  }
+  .active:hover{
+    color: var(--color-light);
+  }
+}
+
+
+//select
+.ParamsCatalog .params-block {
+  .select {
+    margin-bottom: 1em;
+    background: #f3f3f3;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: none;
+    color: var(--color-dark);
+    font-size: 20px;
+  }
+  .select option{
+    outline: none;
+  }
+}
+@media(min-width: 480px){
+  .ParamsCatalog .params-block{
+    .select{
+      display: none;
+    }
+  }
+}

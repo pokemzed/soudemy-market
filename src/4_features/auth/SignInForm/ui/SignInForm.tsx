@@ -1,7 +1,7 @@
 import {ChangeEvent, FC, FormEvent, useState} from "react";
 import {TOAST_ERROR} from "../../../../6_shared/constants/toasts.ts";
 import {validateEmail, validatePasswordLogin} from "../../../../6_shared/types/validations.ts";
-import {useNavigate} from "react-router-dom";
+// import {useNavigate} from "react-router-dom";
 
 interface IFormState {
     email: string
@@ -9,8 +9,8 @@ interface IFormState {
 }
 
 export const SignInForm: FC = () => {
-    const isAuth = false
-    const navigate = useNavigate()
+    // const isAuth = false
+    // const navigate = useNavigate()
     const [formData, setFormData] = useState<IFormState>({
         email: '',
         password: ''
