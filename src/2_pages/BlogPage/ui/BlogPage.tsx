@@ -1,11 +1,11 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 import Layout from "../../../3_widgets/general/Layout";
-import {useGetAllBlogPostsQuery} from "../../../6_shared/api";
-import BlogItem from "../../../5_entities/blog/BlogItem";
+import BlogList from "../../../3_widgets/blog/BlogList";
+import {Container} from "react-bootstrap";
+import ParamsBlog from "../../../4_features/blog/ParamsBlog";
 
 export const BlogPage: React.FC = () => {
-    const {data: blogPosts} = useGetAllBlogPostsQuery(null)
     return(
         <Layout className={"BlogPage"}>
             <Helmet>
@@ -13,14 +13,14 @@ export const BlogPage: React.FC = () => {
                 <meta name="description" content="Lots of interesting news and life hacks from soudemy"/>
                 <title>Blog</title>
             </Helmet>
-
-            {
-                blogPosts?.map((post) => {
-                    return (
-                        <BlogItem postInfo={post} key={post.id}/>
-                    )
-                })
-            }
+            <Container className={"content-container"}>
+                <div className={"posts"}>
+                    <BlogList/>
+                </div>
+                <div className={"filtration"}>
+                    <ParamsBlog/>
+                </div>
+            </Container>
         </Layout>
     )
 }

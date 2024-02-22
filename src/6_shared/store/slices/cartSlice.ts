@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ICartItem} from "../../types/catalog/items.ts";
 
 const initialState: {cartItems: ICartItem[], total: number} = {
@@ -10,7 +10,7 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addItemCart: (state, action: {payload: {id: number, price: number}, type: string}) => {
+        addItemCart: (state, action: PayloadAction<{id: number, price: number}>) => {
             // Находим товар
             const itemInCart = state.cartItems.find(item => item.id === action.payload.id)
             if(itemInCart){
@@ -23,7 +23,7 @@ const cartSlice = createSlice({
                 state.total += action.payload.price
             }
         },
-        removeItemCart: (state, action: {payload: {id: number, price: number}, type: string}) => {
+        removeItemCart: (state, action: PayloadAction<{id: number, price: number}>) => {
             // Находим товар
             const itemInCart = state.cartItems.find(item => item.id === action.payload.id)
             // Проверяем условия

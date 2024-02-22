@@ -1,16 +1,13 @@
 import React from "react";
-import {IItem} from "../../../../6_shared/types/catalog/items.ts";
 import {useNavigate} from "react-router-dom";
 import 'animate.css'
 import {useInView} from 'react-intersection-observer'
 import {useGetItemCatalogQuery} from "../../../../6_shared/api";
+import {useAppDispatch} from "../../../../6_shared/store";
+import {removeItemFavorite} from "../../../../6_shared/store/slices/favoriteGoods.ts";
 
-interface IPropItem {
-    itemId: number,
-    handleItem: (itemId: number) => void
-}
-
-export const FavoriteItem: React.FC<IPropItem> = ({itemId, handleItem}) => {
+export const FavoriteItem: React.FC<{ itemId: number }> = ({itemId}) => {
+    const dispatch = useAppDispatch()
     const {data: item} = useGetItemCatalogQuery(itemId)
     const { ref, inView } = useInView({
         threshold: 0,
@@ -18,7 +15,11 @@ export const FavoriteItem: React.FC<IPropItem> = ({itemId, handleItem}) => {
     })
     const navigate = useNavigate()
     const handleNavigate = () => {
-        navigate(`/catalog/${item?.id}`)
+        navigate(`/catalog/${itemId}`)
+    }
+
+    const handleRemoveItem = () => {
+        dispatch(removeItemFavorite(itemId))
     }
 
     return item && (
@@ -31,7 +32,7 @@ export const FavoriteItem: React.FC<IPropItem> = ({itemId, handleItem}) => {
                     <span>$ {item[0].price}</span>
                 </div>
             </div>
-            <div className={`add-btn active-favorite`} onClick={() => handleItem(itemId)}>
+            <div className={`add-btn active-favorite`} onClick={handleRemoveItem}>
                 <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M14.1864 23.75C14.1864 23.75 1.53015 16.7011 1.53015 8.24235C1.53015 -0.216404 11.3739 -0.921297 14.1864 5.69685C16.9989 -0.921297 26.8427 -0.216404 26.8427 8.24235C26.8427 16.7011 14.1864 23.75 14.1864 23.75Z"

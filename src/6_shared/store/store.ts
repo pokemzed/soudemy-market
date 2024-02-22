@@ -14,6 +14,7 @@ import {
 import storage from 'redux-persist/lib/storage'
 // Reducers
 import InitialGoodsCatalogRequest from './slices/initialGoods.ts'
+import InitialPosts from "./slices/initialPosts.ts";
 import CatalogCategories from './slices/catalogCategories.ts'
 import FavoriteGoods from "./slices/favoriteGoods.ts";
 import CartSlice from './slices/cartSlice.ts'
@@ -22,6 +23,7 @@ import CartSlice from './slices/cartSlice.ts'
 //Связывание стора и персиста
 const rootReducer = combineReducers({
     goods: InitialGoodsCatalogRequest,
+    posts: InitialPosts,
     categories: CatalogCategories,
     favorite: FavoriteGoods,
     cart: CartSlice,

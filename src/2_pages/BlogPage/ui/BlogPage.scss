@@ -1,0 +1,17 @@
+.BlogPage {
+
+
+  //containers
+  .content-container{
+    margin-top: 100px;
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+  }
+  .content-container .posts{
+    width: calc(75% - 1em);
+  }
+  .content-container .filtration{
+    width: calc(25% - 1em);
+  }
+}

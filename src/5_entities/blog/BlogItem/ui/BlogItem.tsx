@@ -1,21 +1,24 @@
 import React from "react";
 import {IBlogPost} from "../../../../6_shared/types/blog.ts";
+import {Link} from "react-router-dom";
 
 interface IBlogItem {
-    postInfo: IBlogPost
+    item: IBlogPost
 }
 
-export const BlogItem: React.FC<IBlogItem> = ({postInfo}) => {
+export const BlogItem: React.FC<IBlogItem> = ({item}) => {
     return (
-        <div className={"BlogItem"}>
-            <img src={postInfo.imgCard} alt={`${postInfo.info.title}-image`}/>
-            <div className={"post-statistics"}>
-                <h2 className={"post-statistics__date"}>{postInfo.date}</h2>
-                <h2 className={"post-statistics__tags"}>{postInfo.tags.join(', ')}</h2>
+        <div className={'BlogItem'}>
+            <img src={item.imgCard} alt={`Image: ${item.info.title}`}/>
+            <div className={"stats-container"}>
+                <h4>{item.date}</h4>
+                <div className={'separator'}></div>
+                <h4>{item.tags.join(', ')}</h4>
             </div>
-            <div className={"post-info"}>
-                <h2 className={"post-info__title"}>{postInfo.info.title}</h2>
-                <p className={"post-info__text"}>{postInfo.info.text}</p>
+            <div className={'info-container'}>
+                <h2>{item.info.title}</h2>
+                <p>{item.info.text}</p>
+                <Link to={item.info.title.toLowerCase()}>Read more</Link>
             </div>
         </div>
     )

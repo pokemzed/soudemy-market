@@ -1,7 +1,10 @@
 import React from "react";
 import {useAppDispatch, useAppSelector} from "../../../../6_shared/store";
 import {useParams} from "react-router-dom";
-import {addItemFavorite, deleteItemFavorite} from "../../../../6_shared/store/slices/favoriteGoods.ts";
+import {
+    addItemFavorite,
+    removeItemFavorite
+} from "../../../../6_shared/store/slices/favoriteGoods.ts";
 
 export const AddToFavourite: React.FC = () => {
     const dispatch = useAppDispatch()
@@ -13,7 +16,7 @@ export const AddToFavourite: React.FC = () => {
     const handleFavourite = () => {
         if (itemInFavourite) {
             console.log('delete item')
-            return dispatch(deleteItemFavorite(Number(itemId)))
+            return dispatch(removeItemFavorite(Number(itemId)))
         }
         dispatch(addItemFavorite(Number(itemId)))
     }
