@@ -2,7 +2,7 @@ import React from "react";
 import {getInitialStateGoods} from "../../../../6_shared/hooks/getInitialStateGoods.ts";
 import {useGetAllCatalogQuery} from "../../../../6_shared/api";
 import {useAppDispatch} from "../../../../6_shared/store";
-import LoaderPage from "../../../general/LoaderPage";
+import LoaderPage from "../../../../6_shared/ui/LoaderPage";
 import {IItem} from "../../../../6_shared/types/catalog/items.ts";
 import CatalogItem from "../../../../5_entities/catalog/CatalogItem";
 import {showMoreItems} from "../../../../6_shared/store/slices/initialGoods.ts";

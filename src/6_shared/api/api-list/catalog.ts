@@ -32,8 +32,19 @@ export const catalog = createApi({
                 return `${API_CATALOG_URL}`
             }
         }),
-        getAllBlogPosts: build.query<IBlogPost[], unknown>({
-            query: () => API_BLOG_POST_URL
+        getAllBlogPosts: build.query<IBlogPost[], {limitOrder: number; category: string; search: string}>({
+            query: (body) => {
+                if(body.category && body.search){
+                    return `${API_BLOG_POST_URL}?category=${body.category}&q=${body.search}&_limit=${body.limitOrder}`
+                }
+                if(body.category){
+                    return `${API_BLOG_POST_URL}?category=${body.category}&_limit=${body.limitOrder}`
+                }
+                if(body.search){
+                    return `${API_BLOG_POST_URL}?q=${body.search}&_limit=${body.limitOrder}`
+                }
+                return API_BLOG_POST_URL
+            }
         })
     })
 })

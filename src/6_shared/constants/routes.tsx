@@ -13,6 +13,7 @@ import TermsAndConditionsPage from "../../2_pages/TermsAndConditionsPage";
 import ProfilePage from "../../2_pages/ProfilePage";
 import SignInPage from "../../2_pages/SignInPage";
 import SignUpPage from "../../2_pages/SignUpPage";
+import BlogItemPage from "../../2_pages/BlogItemPage";
 
 interface IRoute {
     path: ELinks,
@@ -46,9 +47,16 @@ export const ROUTES_LIST: IRoute[] = [
         title: 'Cart',
         metaName: 'Your cart is the closest way to receiving'
     },
+    // BLOG
     {
         path: ELinks.LINK_BLOGPAGE,
         element: <BlogPage/>,
+        title: 'Blog',
+        metaName: 'Lots of interesting news and life hacks from soudemy'
+    },
+    {
+        path: ELinks.LINK_ITEM_BLOGPAGE,
+        element: <BlogItemPage/>,
         title: 'Blog',
         metaName: 'Lots of interesting news and life hacks from soudemy'
     },
@@ -83,7 +91,7 @@ export const ROUTES_LIST: IRoute[] = [
         metaName: 'Page not found'
     },
     {
-        path: ELinks.LINK_ITEMCATALOGPAGE,
+        path: ELinks.LINK_ITEM_CATALOGPAGE,
         element: <CatalogItemPage/>,
         title: '',
         metaName: ''

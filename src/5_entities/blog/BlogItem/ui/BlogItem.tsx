@@ -1,14 +1,18 @@
 import React from "react";
 import {IBlogPost} from "../../../../6_shared/types/blog.ts";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 interface IBlogItem {
     item: IBlogPost
 }
 
 export const BlogItem: React.FC<IBlogItem> = ({item}) => {
+    const navigate = useNavigate()
+    const handleNavigate = () => {
+        navigate(item.info.title)
+    }
     return (
-        <div className={'BlogItem'}>
+        <div onClick={handleNavigate} className={'BlogItem'}>
             <img src={item.imgCard} alt={`Image: ${item.info.title}`}/>
             <div className={"stats-container"}>
                 <h4>{item.date}</h4>

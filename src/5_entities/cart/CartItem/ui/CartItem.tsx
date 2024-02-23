@@ -1,7 +1,7 @@
 import React, {ReactNode} from "react";
 import {ICartItem} from "../../../../6_shared/types/catalog/items.ts";
 import {useGetItemCatalogQuery} from "../../../../6_shared/api";
-import LoaderPage from "../../../../3_widgets/general/LoaderPage";
+import LoaderPage from "../../../../6_shared/ui/LoaderPage";
 
 interface ICartItemProps{
     itemInfo: ICartItem,

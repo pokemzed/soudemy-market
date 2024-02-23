@@ -1,0 +1,35 @@
+.AdBannerBlog{
+  position: relative;
+  background: rgba(0,0,0,0.35);
+  width: 100%;
+  height: 250px;
+  padding: 1em;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: flex-end;
+}
+.AdBannerBlog img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.AdBannerBlog .text{
+  h3{
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0.35em;
+  }
+  p{
+    color: #dadada;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+  }
+}

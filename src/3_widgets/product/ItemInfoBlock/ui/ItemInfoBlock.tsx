@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 import ItemCatalogInside from "../../../../5_entities/product/ItemCatalog";
 import {useParams} from "react-router-dom";
 import {useGetItemCatalogQuery} from "../../../../6_shared/api";
-import LoaderPage from "../../../general/LoaderPage";
+import LoaderPage from "../../../../6_shared/ui/LoaderPage";
 import AddToFavourite from "../../../../4_features/product/AddToFavourite";
 import AddToCart from "../../../../4_features/product/AddToCart";
 

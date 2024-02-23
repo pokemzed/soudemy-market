@@ -3,7 +3,8 @@ import {Helmet} from "react-helmet";
 import Layout from "../../../3_widgets/general/Layout";
 import BlogList from "../../../3_widgets/blog/BlogList";
 import {Container} from "react-bootstrap";
-import ParamsBlog from "../../../4_features/blog/ParamsBlog";
+import BlogParams from "../../../3_widgets/blog/BlogParams";
+import AdBanner from "../../../3_widgets/blog/AdBanner";
 
 export const BlogPage: React.FC = () => {
     return(
@@ -16,9 +17,11 @@ export const BlogPage: React.FC = () => {
             <Container className={"content-container"}>
                 <div className={"posts"}>
                     <BlogList/>
+                    {/*pagination*/}
                 </div>
                 <div className={"filtration"}>
-                    <ParamsBlog/>
+                    <BlogParams/>
+                    <AdBanner/>
                 </div>
             </Container>
         </Layout>
