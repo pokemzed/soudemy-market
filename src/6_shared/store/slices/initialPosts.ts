@@ -23,8 +23,13 @@ export const initialPosts = createSlice({
         changeSearch: (state, action: PayloadAction<string>) => {
             state.limitOrder = 3
             state.search = action.payload
+        },
+        resetInitialPosts: (state) => {
+            state.limitOrder = 3
+            state.search = ''
+            state.category = ''
         }
     }
 })
-export const {changeCategory, changeSearch} = initialPosts.actions
+export const {changeCategory, changeSearch, resetInitialPosts} = initialPosts.actions
 export default initialPosts.reducer

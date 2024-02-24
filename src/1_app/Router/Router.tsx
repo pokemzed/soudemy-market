@@ -1,10 +1,8 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom";
 import {ROUTES_LIST} from "../../6_shared/constants/routes.tsx";
-import {useScrollTop} from "../../6_shared/hooks/useScrollTop.tsx";
 
 export const Router: React.FC = () => {
-    useScrollTop()
     return (
         <Routes>
             {

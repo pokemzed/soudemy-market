@@ -13,21 +13,25 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 // Reducers
-import InitialGoodsCatalogRequest from './slices/initialGoods.ts'
-import InitialPosts from "./slices/initialPosts.ts";
-import CatalogCategories from './slices/catalogCategories.ts'
-import FavoriteGoods from "./slices/favoriteGoods.ts";
-import CartSlice from './slices/cartSlice.ts'
+import initialGoodsCatalogRequest from './slices/initialGoods.ts'
+import initialPosts from "./slices/initialPosts.ts";
+import catalogCategories from './slices/catalogCategories.ts'
+import favoriteGoods from "./slices/favoriteGoods.ts";
+import cartSlice from './slices/cartSlice.ts'
+import blogPost from "./slices/blogPost.ts";
+import {blogApi} from "../api/api-list/blog.ts";
 
 
 //Связывание стора и персиста
 const rootReducer = combineReducers({
-    goods: InitialGoodsCatalogRequest,
-    posts: InitialPosts,
-    categories: CatalogCategories,
-    favorite: FavoriteGoods,
-    cart: CartSlice,
-    [catalog.reducerPath]: catalog.reducer
+    goods: initialGoodsCatalogRequest,
+    categories: catalogCategories,
+    favorite: favoriteGoods,
+    cart: cartSlice,
+    posts: initialPosts,
+    blogPost,
+    [catalog.reducerPath]: catalog.reducer,
+    [blogApi.reducerPath]: blogApi.reducer
 })
 const persistConfig = {
     key: 'root',
@@ -44,7 +48,7 @@ export const store = configureStore({
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        }).concat(catalog.middleware),
+        }).concat(catalog.middleware, blogApi.middleware),
 })
 export const persist = persistStore(store)
 setupListeners(store.dispatch)

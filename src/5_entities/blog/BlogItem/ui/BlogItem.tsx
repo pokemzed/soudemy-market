@@ -1,6 +1,8 @@
 import React from "react";
 import {IBlogPost} from "../../../../6_shared/types/blog.ts";
 import {Link, useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../../../../6_shared/store";
+import {changePostId} from "../../../../6_shared/store/slices/blogPost.ts";
 
 interface IBlogItem {
     item: IBlogPost
@@ -8,7 +10,9 @@ interface IBlogItem {
 
 export const BlogItem: React.FC<IBlogItem> = ({item}) => {
     const navigate = useNavigate()
+    const dispatch = useAppDispatch()
     const handleNavigate = () => {
+        dispatch(changePostId(item.id + ''))
         navigate(item.info.title)
     }
     return (

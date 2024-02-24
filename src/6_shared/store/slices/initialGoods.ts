@@ -22,8 +22,13 @@ export const initialGoods = createSlice({
             state.limitItems = 6
             state.search = action.payload
         },
+        resetInitialGoods: (state) => {
+            state.limitItems = 6
+            state.search = ''
+            state.category = ''
+        }
     }
 })
 
-export const {showMoreItems, changeSearch, changeCategory} = initialGoods.actions
+export const {showMoreItems, changeSearch, changeCategory, resetInitialGoods} = initialGoods.actions
 export default initialGoods.reducer
