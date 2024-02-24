@@ -5,11 +5,13 @@ interface IInitialStatePosts{
     search: string,
     category: string,
     limitOrder: number
+    page: number
 }
 const initialState: IInitialStatePosts = {
     search: '',
     category: '',
-    limitOrder: 3
+    limitOrder: 2,
+    page: 1
 }
 
 export const initialPosts = createSlice({
@@ -17,19 +19,22 @@ export const initialPosts = createSlice({
     initialState,
     reducers: {
         changeCategory: (state, action: PayloadAction<string>) => {
-            state.limitOrder = 3
             state.category = action.payload
+            state.page = 1
         },
         changeSearch: (state, action: PayloadAction<string>) => {
-            state.limitOrder = 3
             state.search = action.payload
+            state.page = 1
+        },
+        changePage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload
         },
         resetInitialPosts: (state) => {
-            state.limitOrder = 3
+            state.page = 1
             state.search = ''
             state.category = ''
         }
     }
 })
-export const {changeCategory, changeSearch, resetInitialPosts} = initialPosts.actions
+export const {changeCategory, changeSearch, changePage, resetInitialPosts} = initialPosts.actions
 export default initialPosts.reducer

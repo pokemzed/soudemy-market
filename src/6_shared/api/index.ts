@@ -9,5 +9,6 @@ export const {
 
 export const {
     useGetAllBlogPostsQuery,
-    useGetBlogPostQuery
+    useGetBlogPostQuery,
+    useGetAllPostsForPaginationQuery
 } = blogApi
