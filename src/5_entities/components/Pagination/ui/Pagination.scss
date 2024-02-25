@@ -1,0 +1,21 @@
+.Pagination{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.Pagination div{
+  padding: 0.5em;
+  color: var(--color-gray);
+  border-bottom: 0 solid var(--color-dark);
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+  &:hover{
+    color: var(--color-dark);
+  }
+}
+.Pagination div.active-page{
+  border-bottom: 1px solid var(--color-dark);
+  color: var(--color-dark);
+}

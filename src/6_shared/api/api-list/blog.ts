@@ -34,7 +34,7 @@ export const blogApi = createApi({
                 return API_BLOG_POST_URL
             }
         }),
-        getBlogPost: build.query<IBlogPost[], string>({
+        getBlogPost: build.query<IBlogPost[], number>({
             query: (postId) => `${API_BLOG_POST_URL}?id=${postId}`
         })
     })

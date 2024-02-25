@@ -8,6 +8,10 @@
 
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: 720px){
+    display: none;
+  }
 }
 .AdBannerBlog img{
   position: absolute;

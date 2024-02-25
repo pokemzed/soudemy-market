@@ -5,7 +5,7 @@ import BlogList from "../../../3_widgets/blog/BlogList";
 import {Container} from "react-bootstrap";
 import BlogParams from "../../../3_widgets/blog/BlogParams";
 import AdBanner from "../../../3_widgets/blog/AdBanner";
-import Pagination from "../../../4_features/blog/Pagination";
+import PaginationBlog from "../../../4_features/blog/PaginationBlog";
 
 export const BlogPage: React.FC = () => {
     return(
@@ -18,8 +18,7 @@ export const BlogPage: React.FC = () => {
             <Container className={"content-container"}>
                 <div className={"posts"}>
                     <BlogList/>
-                    <Pagination/>
-                    {/*pagination*/}
+                    <PaginationBlog/>
                 </div>
                 <div className={"filtration"}>
                     <BlogParams/>

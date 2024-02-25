@@ -1,18 +1,18 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-const initialState: {postId: string} = {
-    postId: ''
+const initialState: {postId: number} = {
+    postId: 0
 }
 
 const blogPost = createSlice({
     name: 'blogPost',
     initialState,
     reducers: {
-        changePostId: (state, action: PayloadAction<string>) => {
+        changePostId: (state, action: PayloadAction<number>) => {
             state.postId = action.payload
         },
         resetPostId: (state) => {
-            state.postId = ''
+            state.postId = 0
         }
     }
 })

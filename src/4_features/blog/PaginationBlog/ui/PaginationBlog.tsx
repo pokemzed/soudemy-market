@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import {useGetAllPostsForPaginationQuery} from "../../../../6_shared/api";
 import {useAppDispatch, useAppSelector} from "../../../../6_shared/store";
 import {changePage} from "../../../../6_shared/store/slices/initialPosts.ts";
+import Pagination from "../../../../5_entities/components/Pagination";
+import LoaderPage from "../../../../6_shared/ui/LoaderPage";
 
-export const Pagination: React.FC = () => {
+export const PaginationBlog: React.FC = () => {
+    const [loader, setLoader] = useState<boolean>(false)
+
     const dispatch = useAppDispatch()
     //Получаем товары
     const initialBlogInfo = useAppSelector(state => state.posts)
@@ -22,22 +26,19 @@ export const Pagination: React.FC = () => {
     if(limitPages === 1){
         return
     }
-
-    const handleChangePage = (page: number) => {
-        dispatch(changePage(page))
+    if(loader){
+        return <div>
+            <LoaderPage/>
+        </div>
     }
 
-    return (
-        <div className={"PaginationBlog"}>
-            {[...Array(limitPages)].map((_, index) => (
-                <div
-                    key={index}
-                    className={index + 1 === initialBlogInfo.page ? 'active-page': ''}
-                    onClick={() => handleChangePage(index + 1)}
-                >
-                    {index + 1}
-                </div>
-            ))}
-        </div>
-    )
+    const handleChangePage = (page: number) => {
+        setLoader(true)
+        setTimeout(() => {
+            dispatch(changePage(page))
+            setLoader(false)
+        }, 250)
+    }
+
+    return <Pagination initialPage={initialBlogInfo.page} changePage={handleChangePage} countItems={limitPages} />
 }

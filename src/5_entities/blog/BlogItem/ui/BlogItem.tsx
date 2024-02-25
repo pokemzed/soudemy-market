@@ -3,6 +3,7 @@ import {IBlogPost} from "../../../../6_shared/types/blog.ts";
 import {Link, useNavigate} from "react-router-dom";
 import {useAppDispatch} from "../../../../6_shared/store";
 import {changePostId} from "../../../../6_shared/store/slices/blogPost.ts";
+import {useScrollTop} from "../../../../6_shared/hooks/useScrollTop.tsx";
 
 interface IBlogItem {
     item: IBlogPost
@@ -11,8 +12,12 @@ interface IBlogItem {
 export const BlogItem: React.FC<IBlogItem> = ({item}) => {
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
+
+    //После обновления списка - скролл к верху
+    useScrollTop()
+
     const handleNavigate = () => {
-        dispatch(changePostId(item.id + ''))
+        dispatch(changePostId(item.id))
         navigate(item.info.title)
     }
     return (
