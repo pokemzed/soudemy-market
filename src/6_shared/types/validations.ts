@@ -5,16 +5,9 @@ export const validateEmail = (email: string) => {
 }
 
 export const validatePasswordLogin = (password: string) => {
-    if(password.length <= 5){
-        return false
-    }
+    return password.length > 5;
 }
 
 export const validatePasswordReg = (password: string) => {
-    if(password.length <= 5){
-        return false
-    }
-    if(password[0] !== password[0].toUpperCase()){
-        return 'First letter uppercase – required!'
-    }
+    return password.length > 5;
 }

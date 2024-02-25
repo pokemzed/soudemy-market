@@ -1,15 +1,14 @@
-import {ChangeEvent, FC, FormEvent, useState} from "react";
-import {TOAST_ERROR} from "../../../../6_shared/constants/toasts.ts";
-import {validateEmail, validatePasswordLogin} from "../../../../6_shared/types/validations.ts";
+import React, {ChangeEvent, FormEvent, useState} from "react";
 import InputAuth from "../../../../6_shared/ui/InputAuth";
-// import {useNavigate} from "react-router-dom";
+import {TOAST_ERROR} from "../../../../6_shared/constants/toasts.ts";
+import {validateEmail, validatePasswordReg} from "../../../../6_shared/types/validations.ts";
 
 interface IFormState {
     email: string
     password: string
 }
 
-export const SignInForm: FC = () => {
+export const SignUpForm: React.FC = () => {
     // const isAuth = false
     // const navigate = useNavigate()
     const [formData, setFormData] = useState<IFormState>({
@@ -41,7 +40,7 @@ export const SignInForm: FC = () => {
 
     // validation
     const validationAuth = () => {
-        if(!validateEmail(formData.email) && !validatePasswordLogin(formData.password)){
+        if(!validateEmail(formData.email) && !validatePasswordReg(formData.password)){
             setValidation({password: 'Некорректный пароль', email: 'Некорректная почта'})
             return 'Некорректная почта и пароль'
         }
@@ -49,14 +48,12 @@ export const SignInForm: FC = () => {
             setValidation({...validation, email: 'Некорректная почта'})
             return 'Некорректная почта'
         }
-        if (!validatePasswordLogin(formData.password)) {
+        if (!validatePasswordReg(formData.password)) {
             setValidation({...validation, password: 'Некорректный пароль'})
             return 'Некорректный пароль'
         }
         return true
     }
-
-
     //submit func
     const submitForm = (e: FormEvent<EventTarget>) => {
         e.preventDefault()

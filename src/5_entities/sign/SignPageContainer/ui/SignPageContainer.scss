@@ -1,13 +1,25 @@
 .SignPageContainer{
   display: flex;
-  align-items: center;
-  justify-content: center;
+}
+.SignPageContainer .content{
+  width: 100%;
+  margin: 150px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 
-  .content{
-    margin: 100px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
+  h1{
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--color-dark);
+  }
+  h1 a{
+    font-size: 32px;
+    text-decoration: none;
+    color: var(--color-gray);
+    transition: color 0.3s;
+    &:hover{
+      color: var(--color-dark);
+    }
   }
 }
