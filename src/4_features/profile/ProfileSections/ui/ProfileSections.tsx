@@ -4,6 +4,7 @@ import {TOAST_SUCCESS} from "../../../../6_shared/constants/toasts.ts";
 import {Container} from "react-bootstrap";
 import ProfileHistory from "../../ProfileHistory";
 import ProfileSettings from "../../ProfileSettings";
+import {useUserAuth} from "../../../../6_shared/hooks/useUserAuth.ts";
 
 const enum EShowSection {
     history = 'History orders',
@@ -12,14 +13,16 @@ const enum EShowSection {
 }
 
 export const ProfileSections: FC = () => {
-    // const dispatch
+    const {logoutUser} = useUserAuth()
+
     const navigate = useNavigate()
     const [section, setSection] = useState(EShowSection.history)
     const handleLogout = () => {
-        // dispatch(logoutProfile)
-        TOAST_SUCCESS('You have successfully logged out of your account!')
-        navigate('/')
+        logoutUser()
+        navigate('/auth/login')
+        TOAST_SUCCESS('Вы успешно вышли из аккаунта')
     }
+
     return (
         <Container className={"ProfileSections"}>
             <header className={"navigation"}>

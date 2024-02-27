@@ -4,12 +4,13 @@ import {Helmet} from "react-helmet";
 import {useNavigate} from "react-router-dom";
 import {TOAST_ERROR} from "../../../6_shared/constants/toasts.ts";
 import ProfileSections from "../../../4_features/profile/ProfileSections";
+import {useUserAuth} from "../../../6_shared/hooks/useUserAuth.ts";
 
 export const ProfilePage: FC = () => {
+    const {isAuth} = useUserAuth()
 
     //Check auth user
     const navigate = useNavigate()
-    const isAuth = false
     useEffect(() => {
         if(!isAuth){
             navigate('/auth/login')

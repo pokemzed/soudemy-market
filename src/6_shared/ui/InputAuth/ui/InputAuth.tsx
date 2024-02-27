@@ -11,14 +11,13 @@ interface IInputAuth {
 
 export const InputAuth: React.FC<IInputAuth> = ({titleInput, placeholder, name, type, handleChange, errorValidation}) => {
     return (
-        <div className={"InputAuth"}>
+        <div className={`InputAuth${errorValidation ? ' error' : ''}`}>
             <label htmlFor={name}>{titleInput}</label>
             <input
                 type={type}
                 placeholder={placeholder}
                 onChange={handleChange}
                 name={name}
-                className={errorValidation ? 'error' : ''}
             />
         </div>
     )

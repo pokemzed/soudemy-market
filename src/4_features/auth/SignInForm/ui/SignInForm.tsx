@@ -1,8 +1,11 @@
-import {ChangeEvent, FC, FormEvent, useState} from "react";
+import {ChangeEvent, FC, FormEvent, useEffect, useState} from "react";
 import {TOAST_ERROR} from "../../../../6_shared/constants/toasts.ts";
 import {validateEmail, validatePasswordLogin} from "../../../../6_shared/types/validations.ts";
 import InputAuth from "../../../../6_shared/ui/InputAuth";
-// import {useNavigate} from "react-router-dom";
+import {useGetAuthFirebase} from "../../../../6_shared/hooks/useGetAuthFirebase.ts";
+import {signInWithEmailAndPassword} from "firebase/auth"
+import {useNavigate} from "react-router-dom";
+import {useUserAuth} from "../../../../6_shared/hooks/useUserAuth.ts";
 
 interface IFormState {
     email: string
@@ -10,8 +13,17 @@ interface IFormState {
 }
 
 export const SignInForm: FC = () => {
-    // const isAuth = false
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
+    const {isAuth, loginUser} = useUserAuth()
+    const auth = useGetAuthFirebase()
+
+    useEffect(() => {
+        if(isAuth){
+            navigate('/profile')
+        }
+    }, [isAuth, navigate]);
+
+    // state
     const [formData, setFormData] = useState<IFormState>({
         email: '',
         password: ''
@@ -64,7 +76,22 @@ export const SignInForm: FC = () => {
             return TOAST_ERROR(validationAuth().toString())
         }
 
-        console.log(formData)
+        signInWithEmailAndPassword(auth, formData.email, formData.password)
+            .then((userCredential) => {
+                // Signed in
+                const user = {
+                    isAuth: true,
+                    userUId: userCredential.user.uid,
+                    userInfo: userCredential.user
+                };
+                loginUser(user)
+                navigate('/profile')
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                setValidation({email: errorMessage, password: errorMessage})
+                TOAST_ERROR(errorMessage)
+            });
     }
 
     return (

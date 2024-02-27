@@ -19,6 +19,7 @@ import catalogCategories from './slices/catalogCategories.ts'
 import favoriteGoods from "./slices/favoriteGoods.ts";
 import cartSlice from './slices/cartSlice.ts'
 import blogPost from "./slices/blogPost.ts";
+import authSlice from "./slices/authSlice.ts";
 import {blogApi} from "../api/api-list/blog.ts";
 
 
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
     cart: cartSlice,
     posts: initialPosts,
     blogPost,
+    auth: authSlice,
     [catalog.reducerPath]: catalog.reducer,
     [blogApi.reducerPath]: blogApi.reducer
 })

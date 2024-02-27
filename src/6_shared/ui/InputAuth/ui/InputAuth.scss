@@ -33,3 +33,13 @@
     color: var(--color-gray);
   }
 }
+
+//error
+.InputAuth.error{
+  input{
+    border: 1px solid red;
+  }
+  label{
+    color: red;
+  }
+}
