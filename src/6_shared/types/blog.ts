@@ -6,6 +6,7 @@ export interface IBlogPost {
     tags: string[]
 }
 
+
 export interface IInfoBlogPost {
     title: string
     text: string

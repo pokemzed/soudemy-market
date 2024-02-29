@@ -1,21 +1,22 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {UserInfo} from "@firebase/auth-types"
 
 interface IAuthSlice {
     isAuth: boolean
     userUid: string
-    userInfo: any
+    userInfo: UserInfo | null
     userLogout: boolean
 }
 interface ILoginUser {
     isAuth: boolean,
     userUId: string,
-    userInfo: any
+    userInfo: UserInfo
 }
 
 const initialState: IAuthSlice = {
     isAuth: false,
     userUid: '',
-    userInfo: {},
+    userInfo: null,
     userLogout: true
 }
 
@@ -33,7 +34,7 @@ export const authSlice = createSlice({
         logoutUser: (state) => {
             state.isAuth = false
             state.userUid = ''
-            state.userInfo = ''
+            state.userInfo = null
             //Меняем чекер на true - чтобы проходила проверка на auth state от firebase
             state.userLogout = true
         }

@@ -5,18 +5,20 @@ import {Container} from "react-bootstrap";
 import ProfileHistory from "../../ProfileHistory";
 import ProfileSettings from "../../ProfileSettings";
 import {useUserAuth} from "../../../../6_shared/hooks/useUserAuth.ts";
+import ProfileAbout from "../../ProfileAbout";
 
 const enum EShowSection {
     history = 'History orders',
     settings = 'Settings',
-    logout = 'Log out'
+    about = 'About',
+    logout = 'Log out',
 }
 
 export const ProfileSections: FC = () => {
     const {logoutUser} = useUserAuth()
 
     const navigate = useNavigate()
-    const [section, setSection] = useState(EShowSection.history)
+    const [section, setSection] = useState(EShowSection.about)
     const handleLogout = () => {
         logoutUser()
         navigate('/auth/login')
@@ -26,6 +28,9 @@ export const ProfileSections: FC = () => {
     return (
         <Container className={"ProfileSections"}>
             <header className={"navigation"}>
+                <button onClick={() => setSection(EShowSection.about)} disabled={section === EShowSection.about}>
+                    {EShowSection.about}
+                </button>
                 <button onClick={() => setSection(EShowSection.history)} disabled={section === EShowSection.history}>
                     {EShowSection.history}
                 </button>
@@ -37,6 +42,7 @@ export const ProfileSections: FC = () => {
                 </button>
             </header>
             <main className={"content"}>
+                {section === EShowSection.about && <ProfileAbout/>}
                 {section === EShowSection.history && <ProfileHistory/>}
                 {section === EShowSection.settings && <ProfileSettings/>}
             </main>

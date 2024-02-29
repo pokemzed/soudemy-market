@@ -1,11 +1,13 @@
 import {FC} from "react";
 import ProfileHistoryCard from "../../../../5_entities/profile/profile-history-card";
+import {useUserAuth} from "../../../../6_shared/hooks/useUserAuth.ts";
 
 export const ProfileHistory: FC = () => {
-    const orders = ["Яблоко", "Апельсин", "Груша"];
+    const {userInfo} = useUserAuth()
+    console.log(userInfo)
     return (
         <div className={"ProfileHistory"}>
-            {orders?.map(order => <ProfileHistoryCard key={order} order={order}/>)}
+            <h1>{userInfo.email}</h1>
         </div>
     )
 }

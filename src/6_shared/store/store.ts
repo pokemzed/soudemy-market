@@ -4,12 +4,12 @@ import {setupListeners} from "@reduxjs/toolkit/query";
 import {
     persistStore,
     persistReducer,
-    FLUSH,
-    REHYDRATE,
-    PAUSE,
-    PERSIST,
-    PURGE,
-    REGISTER
+    // FLUSH,
+    // REHYDRATE,
+    // PAUSE,
+    // PERSIST,
+    // PURGE,
+    // REGISTER
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 // Reducers
@@ -20,6 +20,7 @@ import favoriteGoods from "./slices/favoriteGoods.ts";
 import cartSlice from './slices/cartSlice.ts'
 import blogPost from "./slices/blogPost.ts";
 import authSlice from "./slices/authSlice.ts";
+import profileSlice from "./slices/profileSlice.ts";
 import {blogApi} from "../api/api-list/blog.ts";
 
 
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
     posts: initialPosts,
     blogPost,
     auth: authSlice,
+    profile: profileSlice,
     [catalog.reducerPath]: catalog.reducer,
     [blogApi.reducerPath]: blogApi.reducer
 })
@@ -47,9 +49,17 @@ export const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            },
+            serializableCheck: false
+            // serializableCheck: {
+            //     ignoredActions: [
+            //         FLUSH,
+            //         REHYDRATE,
+            //         PAUSE,
+            //         PERSIST,
+            //         PURGE,
+            //         REGISTER,
+            //     ],
+            // },
         }).concat(catalog.middleware, blogApi.middleware),
 })
 export const persist = persistStore(store)

@@ -1,0 +1,39 @@
+.ProfileAbout .profile-info-card{
+  width: 100%;
+  padding: 1.5em;
+  border-radius: 15px;
+  border: 1px solid #BFBFBF;
+
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+//image
+.ProfileAbout .profile-info-card img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+//about
+.ProfileAbout .profile-info-card .about{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+
+  h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+  }
+}
+.ProfileAbout .profile-info-card .about .title{
+  h1{
+    margin: 0;
+    font-weight: 700;
+    color: var(--color-dark);
+  }
+  span{
+    font-size: 16px;
+    color: var(--color-gray);
+  }
+}
