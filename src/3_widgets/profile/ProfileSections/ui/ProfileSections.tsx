@@ -21,6 +21,8 @@ export const ProfileSections: React.FC = () => {
         }
     }, [isAuth, navigate])
 
+
+    // TODO: доделать
     return (
         <Container className={"ProfileSections"}>
             <SectionsTab section={section} changeSection={(section) => setSection(section)}/>
